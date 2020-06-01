@@ -1,1 +1,21 @@
+KNN - (K nearest neighbor).
+Explanation : 
+             It is a supervised learning algorithm also used in classification.
+             Here we can do both classification and regression.
+According to google :
+             K-nearest neighbor algorithm is a non-parametric method used for classification and regression.
+              
+It is used to classify  non linear datapoints(we cannot draw a straight  line).
 
+
+EXAMPLE :
+         Suppose we have two categories,and in this category i have datapoint,and i need to classify it??how?
+EXPLANATION :
+         Now the first step is to select the k value(the datapoints to be selected which are near to the unknown datapoint).
+         K value means how many near values nee to be selected in terms of distance,for finding distance between two points
+         we have two methods :
+         1)Euclidean distance
+         2)Manhatten distance
+         
+Euclidean distance :          
+         
