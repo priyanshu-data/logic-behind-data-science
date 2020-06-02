@@ -101,7 +101,9 @@ OKAY,this was for classification,let's see for regression,
  Before doing the classification ,we should know how to handle outlier and imbalance data set.
                          
                          
-                         
+         Code from krishnaik,  
+         
+         
                          doing the same in python,
                          #IMPORTING LIBRARIES
                          import pandas as pd
