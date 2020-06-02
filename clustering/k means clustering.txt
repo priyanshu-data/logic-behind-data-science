@@ -1,1 +1,21 @@
+K-MEANS CLUSTERING : 
+                     It is an unsupervised technique. 
+                     K simply means centroid(center of the circle)
+                     The K-means clustering is an algorithm which is used to cluster n objects based on attributes(features) into k partitions,   where k<n .  
+                     or simply speaking k-means clustering is an algorithm to classify or to group based on the attributes/features into k number of groups.
+                     K is positive integer number.
+                     The grouping is done by minimizing the sum of squares of distances between data and the corresponding cluster centroid.
+                     
 
+
+For example : 
+              k=3,and tested the model and i found that they are polluting the datapoints present in the clusters and i felt like increasing the value of k,i can increase the value of k.
+              This is done by TRAIL and ERROR study.
+              
+              
+  The steps involved are : 
+                          1)how the algorithm works
+                          2)which metrics(euclidean or the manhatten distance)
+                          3)elbow method(selecting the right k value)
+              
+                     
