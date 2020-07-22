@@ -1,0 +1,77 @@
+GRADIENT BOOSTING:(inspired from Krish naik)
+
+Q)How gradient boosting works :
+A)It is considered as one of the best algorithm.
+  To understand gradient boosting u must have a knowledge of descison tree.
+  
+  let's see the steps in decision tree :
+  step 1 : compute the base model which  will give me one output.
+           to explain this let's see an example :
+           
+           EXP        DEGREE      SALARY(y)
+           2           B.E          50k            
+           3          MASTERS       70k               
+           5          MASTERS       60k              
+           6           Ph.d         100k
+ 
+         : now the base model will be the average of the (y) column
+          i.e; 75  (just an example).
+         : so,whenever i give my training data set my output will be
+           same i.e; 75
+                         after salary column,we will add(y hat)column
+                      (y)hat
+                        75k
+                        75k
+                        75k
+                        75k 
+       
+  step 2 : compute residuals or also called as errors(pseudo error).  
+         : To compute the residuals we will be substracting the actual value - predicted value.
+           like :  50k - 75k  = (or also we can call sum of sqaure error).
+                                   R1
+                                  -25
+                                  -05
+                                  -15
+                                   25
+        
+ step 3 : construct decision tree sequentially
+        : now,my input will be exp and degree ,but my output will be R1(residual error).
+                              {xi,R1)
+          where, xi=exp and degree
+          R1=square error or residuals
+
+       : when i train my decision tree with the above data{xi,R1} ,my decision tree will produce 
+         data on residuals only,so once again i pass my independent feature to this decision tree
+         i will have R2 feature.(Residual R2)
+       : Suppose, i have residuals(for example) 
+                                   R2
+                                  -23
+                                  -03
+                                  -10 
+                                  -20
+       :output of this decision tree.
+       :still i don't know how to compute salary
+       :now , i will pass these independent features to this model(base+DT1).
+       
+       :output will be like this,
+                                 75+(-23)=52,which is very close to the actual value
+                                 which arises a problem of overfitting.
+       important(we want to create a generalize model which has low variance and low bias.
+       :in this case,i have high variance but low bias.
+       :when i have new test data ,this value will be much bigger for test data,
+                                 TO PREVENT THIS,
+        we will add a learning rate to the residuals value(alpha)
+                                         learning rate(alpha) ranges between 0 to 1
+        :so i will be getting ,
+                               75+alpha(-23)
+                               75+0.1(-23)
+                               75-2.3 
+                                73.7
+                       this value has huge difference to the (50K)datapoint.
+        :so we add one more DT(decision tree).
+        now this DT will be based on the independent features and the R2.
+        Also this DT, will compute my next residuals.
+
+        GENERIC FORMULA,
+                        F(x)=h0(x)+alpha1*h1(x)+alpha2*h2(x)+.....+alpha n*hn(x)
+                                   
