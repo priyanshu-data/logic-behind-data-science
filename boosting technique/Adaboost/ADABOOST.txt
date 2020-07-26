@@ -1,0 +1,71 @@
+ADA BOOST
+
+HOW BOOSTING TECHNIQUE WORK-
+CONSIDER A EXAMPLE OF RECORD FILE(10 FILES)
+step 1 : create base model
+       : This model can be any model.
+     
+NOW,this model fails to classify 2 files
+ONLY THOSE FILES WILL BE SENT TO THE NEXT MODEL (WHICH IS A SEQUENTIAL MODEL) ALL THE DATAPOINTS WILL BE TRAINED BY THIS MODEL.
+
+ALSO, if a record is further classified incorrectly,it will pass on to next model.
+
+ADA BOOST:
+Consider a file with 10 records
+step 1: They will be assigned a sample weight
+FORMULA is w=1/n  ,where n= no.of records
+so here it will be 1/10=0.1 
+
+NOTE: summation of sample weight is always 1
+
+step 2 : create a base stumps(stumps means one depth and any number of leaves)
+for each and every feature a stump is created
+
+NOW,in this which one to select as a base model.
+There are two criteria to select entropy and gini impurity,the low value will be selected.
+
+AFTER this,
+suppose it has done two classification incorrectly.
+We will take total error value
+         =sampling the total errors 
+         =1/7 + 1/7 = 0.284
+
+Performance of stump : 
+              =1/2*log to the base e (1-TE/TE)
+Some value will come.
+
+why we need to do performance of stump : 
+to update the value of sample weight we require performance of stump value.
+
+How to update the new weight:
+     =old weight*e raise to performance of stump value.
+
+THIS WEIGHT IS FOR WRONG CLASSIFIED DATAPOINT
+
+TO decrease the weight of the old datapoints
+        =old weight*e raise to  minus performance stump value.
+
+
+now for normalization
+we take summation of updated weight and divide that number by each updated weight.
+
+
+
+
+WITH THE HELP OF THIS NORMALIZED VALUE BUCKET WILL BE CREATED.
+WHAT IS A BUCKET
+
+  : suppose normalized weight has 0.06 ,0.52,0.06 and so on
+
+bucket for 0.06 will be from 0 to 0.06
+bucket for 0.52 will be 0.06 to 0.59
+and so on
+
+now the algorithm will run the iteration(the number for iteration provided by user) to select different records from these older dataset.
+
+Suppose a random value is selected 0.44,now it will see 0.44 falls in which bucket,it will be populated to the neew dataset and same for all other iteration.
+and process continues until the number provided for the decision tree is done.
+
+
+After this,voting goes,
+here also voting is done and weak learner becomes one big strong learner.
