@@ -29,7 +29,7 @@ When training set is giving me high error(r^2 value)            When training se
 it is called underfitting.                                      accuracy is low .
 
 HIGH BIAS AND HIGH VARIANCE                                     LOW BIAS AND HIGH VARIANCE                                    LOW BIAS AND LOW VARIANCE
-
+ 
 
 
 
