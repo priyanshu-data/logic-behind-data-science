@@ -1,4 +1,4 @@
-BIAS AND VARIANCE : Bias and Varaince terms comes into picture only when we build the model , or when we have training and test data.
+BIAS AND VARIANCE : Bias and Varaince terms comes into picture only when we build the model , or when we have training and test data. or to put simply put, bias is training                         bias is training error and variance is testing error.
                   
                   Consider a scenario,where we have x and y axis,and on that graph points are scattered and some problem statement is given and i am using one of linear regression
                   technique: Linear regression is given by the equation y=mx+c , and graphically it is represented by term best fit line.
@@ -26,9 +26,22 @@ CONDITIONS OF OVERFITTING AND UNDERFITTING :
 FOR REGRESSION TECHNIQUES :
 
 When training set is giving me high error(r^2 value)            When training set accuracy is high and test                  When both the data set are well balanced.
-it is called underfitting.                                      accuracy is low .
+and testing error is also high                                  accuracy is low .
 
-HIGH BIAS AND HIGH VARIANCE                                     LOW BIAS AND HIGH VARIANCE                                    LOW BIAS AND LOW VARIANCE
+HIGH BIAS AND HIGH VARIANCE                                     LOW BIAS AND HIGH VARIANCE                                   LOW BIAS AND LOW VARIANCE
+
+it is called underfitting.                                       Overfitting                                                 Well balanced.
+
+
+
+FOR CLASSIFICATION TECHNIQUES :
+
+When training error is low and testing error is high.           When training error is high and test error                   When both are having less error.  
+                                                                is high.
+LOW BIAS  AND HIGH VARIANCE                                     HIGH BIAS AND HIGH VARIANCE                                  LOW BIAS AND LOW VARIANCE
+
+The model is overfitting.                                       The model is underfitting.                                   MODEL IS WELL BALANCED.
+
  
 
 
