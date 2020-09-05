@@ -1,1 +1,25 @@
+This analysis aids in understanding the relation between two or more variables.      OR
+A linear relationship is a statistical term used to describe a straight line(y=mx+c)(best fit line) or the relationship between a variable and a constant. Understanding two variables, one is independent variable and other variable is dependent variable.
 
+what are the notation for y=mx+c
+m=slope= whithin the unit change in the points(points in x axis). what is the change in best fit line(change in y axis),is called slope.
+c=Where x and y points intercept
+
+How it works?
+How to know which line is the best fit line as one can have multiple fit line in x y plot.One can select best fit line with the least error values(distance from data points to the fit line) that line is called best fit line.
+This line is also called the pattern that the machine has learned through training set.
+
+
+In layman terms: i will have independent value and dependent value ,plot on the x and y axis.
+Firstly , going with the training set, plotting the points on x and y axis. attain a best fit line there will be error values.(error values : suppose i have points 
+     experience       income 
+        2              40000 
+
+But when i add best fit line it becomes                    experience     income
+                                                              2           38000   
+                                                              
+This 2000 less is my error value.This 2000 is the difference actual my predicted.
+To represent this error there are different matrices : like : 
+1) sum of square error : squaring the errors and summing them up.(we square because some may be positive or some may be negative ,to overcome this negative part)
+2)Root mean square error : taking root of above step and dividing them by number of records(here one should know which dataset records to be taken.Also called RMSE.
+RMSE should be between 0 and 1
