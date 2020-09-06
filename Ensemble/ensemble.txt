@@ -1,1 +1,2 @@
-
+Q)What is ensemble learning???
+Answer: A learning technique multiple individual models to create a master model,this process is called ensemble learning.
