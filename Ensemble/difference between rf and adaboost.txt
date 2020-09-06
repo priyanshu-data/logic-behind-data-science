@@ -1,0 +1,12 @@
+both comes under the family of ensemble learning.
+
+        Random forest                                                            Ada boost
+1)   is a bagging technique                                            1)  is a boosting technique
+2)   is a parallel learning process                                    2)  sequential learning process
+     meaning is                                                            meaning is
+     individual decision tree or model are built                           it depends on previous model
+     from the main data parallely.
+     and none of the tree is dependent on other.
+3)   here, individual model is a full grown tree.                      3)  here it is a stump.
+
+      
