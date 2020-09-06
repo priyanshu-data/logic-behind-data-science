@@ -1,4 +1,42 @@
 ADA BOOST
+By Aman :
+           Example : 
+                     Age              BMI                 Gender
+                     25               24                    F
+                     26               25                    F
+                     41               31                    M
+                     62               30                    M
+                     
+                     Let's try ada boost here :
+                     how does this algorithm works ?
+                     
+                     step 1: First it will assign intial weights.(The weights should be like if we sum all the weights it should be 1.in above example it should be 1/4=.....
+                     Ada boost is a sequential learning process.
+                     
+                     Now,the first or the weak learner or the base model will be fitted on above data.
+                     Here weak learners are stumps(one root and two leaves).
+                     
+                     How to create this stump : with the help of gini index,entropy gain .
+                     It will select a condition and stump will be created.
+                     
+                     After the stump is created the data will be tested for accuracy on this stump. Now there's a possibilty some of the records are missclassified.
+                     
+                     Now in the next iteration initial weights are changed ,now the weight of the misclassified record will go up and the weight of the others will come down to normalize properly.
+                     So ,we can say in the next iteration more importance is given to the misclassified record.Here it will try to classify the record more accurately.
+                     
+                     And this process of weak learning continues 
+                     
+                     
+                     THE NAME IS ADABOOST OR ADAPTIVE BOOST because it adapts to previous model.
+                     Finally, last model will be the combination of these weak learners
+
+
+
+
+
+
+
+By Krish :
 
 HOW BOOSTING TECHNIQUE WORK-
 CONSIDER A EXAMPLE OF RECORD FILE(10 FILES)
