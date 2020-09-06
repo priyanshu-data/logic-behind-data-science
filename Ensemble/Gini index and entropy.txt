@@ -1,0 +1,74 @@
+It is a very important concept from decision point of view.
+These are the tree splitting criteria.
+
+Considering the example :
+                          Id            Loan Amount       Loan Status
+                          1               100               Bad                            
+                          2               200               Good 
+                          3               250               Bad                  
+                          4               150               Good 
+                          5               50                Bad
+                          
+                          
+                          What happens to this data when decision tree algorithm is run over it.
+                          
+                          Decision tree algorithm will decide how to create a tree.
+                          To create a tree which feature should be considered as a root node.(here we have id , loan amount), here the algorithm has to decide how to split and 
+                          on which condition to split.
+                          Here comes the play for gini index and entropy gain.
+                          Formula for gini index = 1-summation of Probability c square   where, c=i  and j.(it simply means compute all the breakage happens inside the tree.
+                          
+                          For example : root node is loan amount>=200                  so we have 2 record which is equal to greater than 200.
+                                        so it will have two condition like true and false
+                                        one which satisfy the condition will be true and others will be in false condition
+                                        
+                          TO CALCULATE THE IMPURITY OF THE NODE OR IMPURITY OF THE SPLIT.             
+                          we have 2 bad to true side and two good and 1 bad to the false  (condition where all split is perfect is called best split).
+                          Now the gini for true side,
+                                             1-((0/2)^2+(2/2)^2)                               1-((2/3)^2+(1/3)^2)
+                                             which will be '0'                                  which will be 4/9
+                                             '0' means good class                                 '2' means good class and 1 means bad record  as in the data set.
+                                             
+                          Final gini index is weighted gini index : 
+                                                                     2/5 which means outof 5 records 2 are in true side, '0' means gini index on true side.
+                                                            2/5*0 + 3/5*4/9=calculate it.
+                          This becomes the final score for that root node
+                          
+                          GINI INDEX ranges from 0 to 1.
+                          So , it will take gini index of all the root node , and whereever it find the minimum gini index score that will be selected as the root node.
+                          
+                          
+                          
+                          Entropy or information gain : 
+                                                       Just formula wise it is different
+                                                       
+                                                       -summation of j=1,c Probability of j*log base 2(probability of j)
+                                                       
+                                                       here also the algorithm will select the minimum information gain root node.
+                                                       
+                                                       
+ Which one to select when : 
+                            Gini is fast to compute , but again it will depend on the dataset.
+                           
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
