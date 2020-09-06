@@ -1,8 +1,57 @@
-GRADIENT BOOSTING:(inspired from Krish naik)
+GRADIENT BOOSTING:(inspired from Krish naik)and(Aman)
+Here the learning(or the ensembling)happens by optimizing the loss.
+Here leaf nodes are bigger(8-32).
+
+
+What is loss?
+Example of linear regression , there we have loss(error) the ordianry least square method (OLS) ,it will optimize the error by squaring them and will bring down the value as close as to zero.And this process is called optimization of loss function.
+The same principle is used for gradient boosting.
+Taking the example of a dataset
+                                 AGE             BMI              HEIGHT
+                                  21              24               174                      
+                                  22              26               176                  
+                                  23              30               169 
+                                  
+                                  From this i can conclude it is a regression problem because from AGE and BMI i have to predict height.We have to predict a pattern .
+Now , let's see what happens when the dataset is given to the boosting algorithm.
+NOTE : Boosting requires 2 things :   1) loss function                    2)Additive model
+Boosting will compute the first residuals (diff between actual and predicted value.
+Now in the above dataset , we didn't find residuals, from where we will have residuals?
+Now ,boosting has certain steps :
+                           step 1 : This algorithm will compute the average of the target column(as it is a regression problem average and if the problem was of classsification use case then the concept of odds and probability comes).
+                           
+                            step 2 : So the average of above height is 171(for example),it assumes there is no model ,so it will assume predicted value as the average value i.e: 171.
+                            Now, we have actual and predicted so we can have residuals,for above residuals will be 3 , 5 , -2.
+                           
+                           step 3 : Gradient model will fit the model on this residuals ,now, residuals becomes the target column
+                           Now we have a model.
+                           This model will again predict the new residuals ,now new value is 3.5 , 4.2 ,
+                           
+                           step 4 : predictions are changed (first the prediction column has just the average number now it has new prediction value)
+                                     new prediction calculation is 171+0.1*3.5=this output will be the new predicted value.
+                                     0.1 is the learning rate : it ranges from 0 to 1
+                                     
+                                     
+                            And the iteration continues till number specified or the default number of iteration
+                            So, final prediction will be ;
+                                  final prediction=Base value+(LR*first residualprediction by model1)+(LR*2nd residualprediction by model2)
+                                  
+                                  So ,this is how gradient boosting works.
+                                  
+
+
+
+
+
+Next example:
+
+
+
+
 
 Q)How gradient boosting works :
 A)It is considered as one of the best algorithm.
-  To understand gradient boosting u must have a knowledge of descison tree.
+  To understand gradient boosting u must have a knowledge of decision tree.
   
   let's see the steps in decision tree :
   step 1 : compute the base model which  will give me one output.
