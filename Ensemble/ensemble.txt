@@ -1,5 +1,5 @@
 Q)What is ensemble learning???
-Answer: A learning technique multiple individual models to create a master model,this process is called ensemble learning.
+Answer: A learning technique which include multiple individual models to create a master model,this process is called ensemble learning.
 
 Bagging and boosting are the ways to implement ensemble models.
 
