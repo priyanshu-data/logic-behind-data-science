@@ -1,0 +1,15 @@
+It is also a bagging technique.
+Suppose i have a dataset D (in bagging one has many base or weak learners) so here also same approach instead of weak learners it has Decision trees(like dt1,dt2,dt3,dt4) 
+
+                     Now in decision tree it will include some sample of rows and some sample of columns.  ,model is trained on training set.
+                     Now comes the test data on dt1,dt2,dt3,dt4.
+                     
+                     for classification problem,
+                     the output is 1, 1, 0, 1
+                     final output is '1' according to majority.
+                     
+                     for regression problem,
+                     output will be a continuous value (like 123.4,2234,6565,and so on)
+                     in this case, mean will be taken of the output or the median of the output.
+                     
+                     
