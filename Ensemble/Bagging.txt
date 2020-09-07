@@ -1,1 +1,18 @@
+It is also bootstrap aggregation.
+
+Random forest is an example of bagging techniques.
+
+Considering the following example : 
+                                    suppose i have a dataset named D(n records) and now the base learners(weak learners) are created like m1 , m2 , m3 , m4 , .....mn.
+                                    For each and every weak learner sample of D is provided (always remember sample will always be less than n records).
+                                    Also resampling the data and provide it to weak learner is called "row sampling with replacement".
+                                    
+Note : problem statement            After training is done , i give my test data and predict the data . Now the test data will go to m1 , m2 , m3 , m4 , ..mn  and suppose the
+is of binary classification         output is 1 , 0 , 1 , 1 
+                                    
+                                    Next we apply voting classifier(means the majority of the votes are considered , here we have majority of the values as 1 and 1 is the output).
+                                    
+                                    Now the term bootstrap aggregator it simply means bootstrap : row sampling is called bootstrap and the end result that is output '1' is called 
+                                    aggregation.
+
 
