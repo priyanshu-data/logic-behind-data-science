@@ -1,0 +1,50 @@
+Q) Which algorithm does not require scaling??
+ANS) Decision tree, random forest (these are bagging technique), all type of boosters.
+Because they itself makes small branches.
+
+
+
+It is observed that standardization is much more effective than normalization. 
+
+
+It is an important step in feature scaling which is an integral part of feature engineering.
+
+Normalisation : It helps to scale down the dataset in the range of 0 to 1. (also called min max scalar).
+                 There are variety of normalization, but i have just used min max scalar.
+
+                  X(norm)=    X-X(min)
+                            ------------  
+                            X(max)-X(min)
+
+
+Q)How to import it??
+ANS)from sklearn.preprocessing import MinMaxScalar
+    scaling=MinMaxScalar()
+    scaling.fit_transform(df[["","",""]])                                    df=dataset name                   in square bracket put feature name.                                                
+    
+    
+                  
+
+Standardisation : It helps to scale down your feature based on the standard normal distribution( mean = 0 and standard deviation = 1 )(also called z score transformation).
+
+                  z=  x- μ
+                     ------
+                       σ
+                       
+                        μ=meu=mean
+                        σ=sigma=standard deviation
+                        x=feature data
+
+
+Q) How to import it?
+ANS) from sklearn.preprocessing import StandardScaler
+     scaling=StandardScaler()
+     scaling.fit_transform(df[["","",""]])                                       df=dataset name                   in square bracket put feature name.
+    
+    
+    
+    
+    
+ Q) When to use standardization and when to normalization??
+ ANS)  
+
