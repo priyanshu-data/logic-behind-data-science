@@ -11,6 +11,8 @@ It is an important step in feature scaling which is an integral part of feature 
 
 Normalisation : It helps to scale down the dataset in the range of 0 to 1. (also called min max scalar).
                  There are variety of normalization, but i have just used min max scaler.
+                 
+Normal distribution follows : 68 : 95 : 99.5 rule for distribution                 
 
                   X(norm)=    X-X(min)
                             ------------  
