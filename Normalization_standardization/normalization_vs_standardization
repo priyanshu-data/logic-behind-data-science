@@ -10,7 +10,7 @@ It is observed that standardization is much more effective than normalization.
 It is an important step in feature scaling which is an integral part of feature engineering.
 
 Normalisation : It helps to scale down the dataset in the range of 0 to 1. (also called min max scalar).
-                 There are variety of normalization, but i have just used min max scalar.
+                 There are variety of normalization, but i have just used min max scaler.
 
                   X(norm)=    X-X(min)
                             ------------  
@@ -18,8 +18,8 @@ Normalisation : It helps to scale down the dataset in the range of 0 to 1. (also
 
 
 Q)How to import it??
-ANS)from sklearn.preprocessing import MinMaxScalar
-    scaling=MinMaxScalar()
+ANS)from sklearn.preprocessing import MinMaxScaler
+    scaling=MinMaxScaler()
     scaling.fit_transform(df[["","",""]])                                    df=dataset name                   in square bracket put feature name.                                                
     
     
