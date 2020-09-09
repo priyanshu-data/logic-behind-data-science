@@ -1,0 +1,31 @@
+#Gridsearchcv-(cv means cross validation)
+if we have a input data ,we break the data into test and train :
+what if we want to cross validate again what if we want to create multiple test so we cannot create again test and train from those previous test and train data as this will reduce the size of the of the data which is not good for the ml learning.
+So the answer to this is cross validation:
+what happens here is> test will be selected randomly from the main data 
+example is:You have 100 rows out of this create 5 bucket(b1,b2,b3,b4,b5) of 20 rows each (selected randomly),
+So what happens in cross validation is:in one iteration our model will be fit on b1, b2,b3,b4 and b5 will be treated as test.In the next iteration b5 will become part of training and b1 will be the test,in next same process will happen again and again.from this subset of data one can identify whether the model is performing good, this concept is called CV.
+#what is grid searchcv
+example:what happens when we write sklearn.randomforest(dataset),there are certain parameters that acts on the data like(n_tree,max_depth,criteria(either gini,entropy).
+Now when i run the model without this parameters it will run nodoubt about it,the reason behind this is default status.
+But,as a data scientist one should get best parameters using hyper tuning parameters(the best parameters for the data that is called hyper parameter tuning).
+
+And this two gridsearchcv and randomsearchcv help to gain this best parameters.
+Working of gridsearchcv: as random forest has default parameters but i need to run my define parameters to check the result at that time we use gridsearchcv.and where the combination gives best result that is shown in the output.
+why it is called gridsearchcv
+it is a combination of models running on different parameters.
+until now we only used two parameters to tune
+
+but what if i want to tune 20 parameters so,the size of the grid will become more complicated and multi dimensional,in simply iteration will increase.
+when the data size is small go for gridsearchcv 
+
+
+when the dataset is large go for randomisedsearchcv:
+it also work in a same fashion but it doesn't try all the combinations 
+for example i want to try(max_depth=3,4,5  and ntree=50,80,100)
+but here it will randomly pick the combinations from all the combinations
+how he select random combinations?
+max_depth=3,4,5 if it has to choose only one variable ,
+it depends on what kind of distribution we are giving to the model to chooe value from, it means:u also need to specify a choose from distribution some value will be choosen based on the arguments which we have given.
+
+
