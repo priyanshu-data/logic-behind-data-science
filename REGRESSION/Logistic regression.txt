@@ -1,0 +1,32 @@
+Q) Why this algorithm is actually used?
+ANS) This algorithm is used for problems like binary classification, multiclass classification.
+
+Q) When it is classifying the data then why the name regression?
+ANS) I know linear regression is expressed in the form of 
+                                                         y=mx+c
+                                                         where, m=slope
+                                                                x=datapoint
+                                                                c=intercept
+Now taking a dataset(obesies or not ) of binary classification, applying linear regression and i can give a threshold of 0.5(as it has classification of 1 and 0) and i can write
+a condition where value >=0.5 should be treated as 1 and value less than 0.5 should be treated as 0.
+As now i have a best fit line ,with the help of this best fit line i can say whetehr the person is obeyes or not.
+
+Q) So where the logistic regression comes in picture??
+ANS) Now considering the above dataset, i have a datapoint which is outlier(which is important we cannot neglect it), so my best fit line will also change(trying to reduce the 
+error distance) (y).
+Now, here the classification is misclassified.(like for example for a person weighing 75 should be considered as obeyes but the classsification done is nt obeyes which is not 
+right).(high error rate),that's why one should not use linear regression for this kind of problem, go for logistic regression.
+
+So we divide the line like 3 lines (the higher, the lower and the sigmoid curve(3 line)).
+
+
+
+Maths behind logistic regression.
+
+When considering the points in a plane , where we need a line which separate the particular points.
+When we can have a line with the help of y=mx+c
+
+Some assumption to make;
+                        all positive points to +1, and all negative points to -1(why not zero why -1)
+                        reason is: The line(intercept is passing through origin)(consideration) is passing through origin so i can say c=0),now calculating the distance of the data
+                        point to the line ,the datapoint above the line are called positive value and below the line are negative values.
