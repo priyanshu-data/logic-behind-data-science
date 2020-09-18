@@ -20,4 +20,8 @@ For example :
               
               
 steps in how the algo works :                      
-                            1)  
+                            1) select the k valaue(centroid), suppose i have k=2
+                            2) Initialize two centroid randomly in the plane.
+                            3) To find the distance of the points from the centroid(k), to find the distance draw two straight lines((+) it looks like this)(the point above the  
+                               line will be in one cluster and the rest of the points to other cluster.Now, select the group and find the mean value(average),now move the centroid
+                               to the mean point, one will have 
