@@ -24,4 +24,13 @@ steps in how the algo works :
                             2) Initialize two centroid randomly in the plane.
                             3) To find the distance of the points from the centroid(k), to find the distance draw two straight lines((+) it looks like this)(the point above the  
                                line will be in one cluster and the rest of the points to other cluster.Now, select the group and find the mean value(average),now move the centroid
-                               to the mean point, one will have 
+                               to the mean point, one will have new centroid points and now again repeat the second step again.After some iteration one will have perfect clusters.
+                               
+Steps in metrics :
+                 1)here i have used euclidean distance , suppose in a plane(xy) there are two points P1 and P2 with co-ordinate as for P1(x1,y1) for P2(x2,y2).
+                 It says 
+                          d=sqrt((x2-x1)^2+(y2-y1)^2). 
+                          
+                          
+                          
+                          
