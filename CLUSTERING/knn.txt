@@ -1,0 +1,223 @@
+KNN - (K nearest neighbor).
+Explanation : 
+             It is a supervised learning algorithm also used in classification.
+             Here we can do both classification and regression.
+According to google :
+             K-nearest neighbor algorithm is a non-parametric method used for classification and regression.
+              
+It is used to classify  non linear datapoints(we cannot draw a straight  line).
+
+
+EXAMPLE :
+         Suppose we have two categories,and in this category i have datapoint,and i need to classify it??how?
+EXPLANATION :
+         Now the first step is to select the k value(the datapoints to be selected which are near to the unknown datapoint).
+         K value means how many near values nee to be selected in terms of distance,for finding distance between two points
+         we have two methods :
+         1)Euclidean distance
+         2)Manhatten distance
+         3)Minkowski distnace
+         
+Euclidean distance :    suppose we have two points(A and B) in a 2d graph(X and Y)and the co-ordinate for the points are A(x1,y1) 
+                        and B(x2,y2),to find distance between these two points will be : 
+                        =sqrt of (x2-x1)^2 + (y2-y1)^2
+                        
+Manhatten distance :    In this,we have two points in a 2d graph, here instead of calculating distance directly we try to make a 
+                        right angle triangle(also we can called it as pyhtogoras theorem),then considering the above example now we
+                        have three points(A , B and imaginary C  as a right angle triangle)then we calculate distance of AC and BC,
+                        then we add it.
+                        =|x2-x1|-|y2-y1|
+                        
+                        
+Minkowski is not used much.
+
+
+Here i m going with the euclidean distance,
+                                           
+                                           
+                                           
+Before starting with the Knn we must see our data,i mean does the data have missing values,could you drop the feature,scaling is needed,data has to be in numeric form
+here in knn, scaling(standardization) is needed for the ease of algorithm.
+
+Scaling(standardization) can be done with the help of two methods : 
+     
+           1)Z-score,values lies between (-3 to +3)
+           2)min max scalar,values lies between(0 to 1)this is used widely. 
+           
+     
+Z-score = from each value we substract mean and divide by standard deviation)
+
+min max scalar = from each data point we substract maximim value and then divide by max-min
+     
+     
+After scaling,it is easy for knn to work.
+
+
+Now,next question is how to determine the value of k=?
+ for this,their is a library in R called 'caret' in which there's function called 'trainControl().
+ 
+ the code looks like:
+                     # BEFORE KNN MODEL
+                     var<-trainControl(method='repeatedcv,number=10,repeats=3)
+                     #for fitting the model.
+                     set.seed(222)
+                     fit<-train(targetfeature~.,data=training data,method='knn',tunelength=20,trControl=var,preProc=c("center","scale"))
+                     #to check model performance
+                     fit
+                     #in this model we will get k value number
+                     plot(fit)
+                     #also we can check variable importance plot
+                     varImp(fit)
+                     
+     
+EXPLANATION of the code : 
+                        1st code says that ,method='repeatedcv(cross validation)   means  for developing the model we use this method,number=10   means  number of resampling iteration,repeats=3  means to repeat the complete set of cross validation.
+                        
+                        Now this whole model was based on accuracy ,their's another method ROC method.
+                        # BEFORE KNN MODEL
+                         var<-trainControl(method='repeatedcv,number=10,repeats=3,classProbs=TRUE,summaryFunction=twoClassSummary)
+                         #for fitting the model.
+                         set.seed(222)
+                         fit<-train(targetfeature~.,data=training        
+                     data,method='knn',tunelength=20,trControl=var,preProc=c('center','scale'metric='ROC',tuneGrid=expand.grid(k=1:60))
+                     
+                     
+                     
+                     
+                     And rest is same.
+                     
+                    
+OKAY,this was for classification,let's see for regression,
+                       After the prediction , We need to do RMSE (root means square error)
+                       sample code : RMSE(pred,testdataset$targetvariable)
+                       #rmse value should be as low as possible.
+                       
+                       
+                       
+                       
+ Now we know how to calculate k value.
+ We assume k=3,also we mostly go for odd values of k,because we can have a scenario where we can get equal number of category,that would be a problem.
+ 
+ Before doing the classification ,we should know how to handle outlier and imbalance data set.
+                         
+                         
+         Code from krishnaik,  
+         
+         
+                         doing the same in python,
+                         #IMPORTING LIBRARIES
+                         import pandas as pd
+                         import seaborn as sns
+                         import matplotlib.pyplot as plt
+                         import numpy as np
+                         %matplotlib inline
+                         
+                         #Read the data
+                         
+                         #Standardize the dataset 
+                         from sklearn.preprocessing import StandardScaler
+                         scaler = StandardScaler()
+                         scaler.fit(df.drop('TARGET CLASS',axis=1))
+                         scaled_features = scaler.transform(df.drop('TARGET CLASS',axis=1))
+                         df_feat = pd.DataFrame(scaled_features,columns=df.columns[:-1])
+                         df_feat.head()
+                         
+                         #plot
+                         import seaborn as sns
+                         sns.pairplot(df,hue='TARGET CLASS')
+                         
+                         
+                         #splitting the data
+                         from sklearn.model_selection import train_test_split
+                         X_train, X_test, y_train, y_test = train_test_split(scaled_features,df['TARGET CLASS'],
+                                                    test_size=0.30)
+                          
+                          
+                         #using knn
+                         from sklearn.neighbors import KNeighborsClassifier
+                         knn = KNeighborsClassifier(n_neighbors=1)
+                         knn.fit(X_train,y_train)
+                         pred = knn.predict(X_test)
+                         
+                         
+                         
+                         
+                         #predictions  and evaluation
+                         from sklearn.metrics import classification_report,confusion_matrix
+                         from sklearn.model_selection import cross_val_score
+                         print(confusion_matrix(y_test,pred))
+                         print(classification_report(y_test,pred))
+                         
+                         
+                         
+                         
+                         #choosing the kvalue
+                         accuracy_rate = []
+                         # Will take some time
+                         for i in range(1,40):
+    
+                            knn = KNeighborsClassifier(n_neighbors=i)
+                            score=cross_val_score(knn,df_feat,df['TARGET CLASS'],cv=10)
+                            accuracy_rate.append(score.mean())
+                            
+                         error_rate = []
+                         # Will take some time
+                         for i in range(1,40):
+    
+                            knn = KNeighborsClassifier(n_neighbors=i)
+                            score=cross_val_score(knn,df_feat,df['TARGET CLASS'],cv=10)
+                            error_rate.append(1-score.mean()) 
+                            
+                            
+                            
+                          error_rate = []
+                          # Will take some time
+                          for i in range(1,40):
+    
+                              knn = KNeighborsClassifier(n_neighbors=i)
+                              knn.fit(X_train,y_train)
+                              pred_i = knn.predict(X_test)
+                              error_rate.append(np.mean(pred_i != y_test))
+                              
+                              
+                        
+                        plt.figure(figsize=(10,6))
+                         #plt.plot(range(1,40),error_rate,color='blue', linestyle='dashed', marker='o',
+                         #       markerfacecolor='red', markersize=10)
+                          plt.plot(range(1,40),accuracy_rate,color='blue', linestyle='dashed', marker='o',
+                            markerfacecolor='red', markersize=10)
+                          plt.title('Error Rate vs. K Value')
+                          plt.xlabel('K')
+                          plt.ylabel('Error Rate')
+                          
+                          
+                          
+                          
+                          
+                          
+                          # FIRST A QUICK COMPARISON TO OUR ORIGINAL K=1
+                          knn = KNeighborsClassifier(n_neighbors=1)
+
+                          knn.fit(X_train,y_train)
+                          pred = knn.predict(X_test)
+
+                          print('WITH K=1')
+                          print('\n')
+                          print(confusion_matrix(y_test,pred))
+                          print('\n')
+                          print(classification_report(y_test,pred))
+                          
+                          
+                          
+                          
+                          # NOW WITH K=23
+                          knn = KNeighborsClassifier(n_neighbors=23)
+
+                          knn.fit(X_train,y_train)
+                          pred = knn.predict(X_test)
+
+                          print('WITH K=23')
+                          print('\n')
+                          print(confusion_matrix(y_test,pred))
+                          print('\n')
+                          print(classification_report(y_test,pred))
