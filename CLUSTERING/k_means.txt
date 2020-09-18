@@ -31,6 +31,14 @@ Steps in metrics :
                  It says 
                           d=sqrt((x2-x1)^2+(y2-y1)^2). 
                           
+                         
+Steps in selecting the kvalue :     
+                               Elbow method
+                               It says a loop will be run fro 1 to 20
+                               now suppose k=1
+                               run whole process finf the distance Wcss=Within cluster sum of square
+                                                                Wcss=Summation of i=1 to n(distance of centroid(Ci) + distance of points(Xi))whole square.
+                          
                           
                           
                           
