@@ -1,6 +1,36 @@
+Q) How the algorithm works? from clustering perspective?
+ANS) In a layman terms i can say when we have a 2D plane and some points plotted on it(already clustered) now when an unknown datapoint comes where should it goes?
+     This is done with the help of knn.
+     
+ step 1 : selecting the k value (how many near neighbor one has to consider).
+ step 2 : Calculate the distance of the nearest neighbors(how many neighbor that in the k value).
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 KNN - (K nearest neighbor).
 Explanation : 
-             It is a supervised learning algorithm also used in classification.
+             It is a unsupervised learning algorithm also used in classification.
              Here we can do both classification and regression.
 According to google :
              K-nearest neighbor algorithm is a non-parametric method used for classification and regression.
