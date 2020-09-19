@@ -4,7 +4,11 @@ Because they itself makes small branches.
 
 
 
-It is observed that standardization is much more effective than normalization. 
+It is observed that standardization is much more effective than normalization.
+NORMALIZATION DOSEN'T TREAT OUTLIERS WELL.
+WHEREAS STANDARDIZATION SCALES DOWN PERFECTLY.
+
+Does this means normalization is bad, no particularly, it depends on the data set, when the data set is small one can go with normalization.
 
 
 It is an important step in feature scaling which is an integral part of feature engineering.
@@ -48,5 +52,15 @@ ANS) from sklearn.preprocessing import StandardScaler
     
     
  Q) When to use standardization and when to normalization??
- ANS)  
+ ANS) Max-Min Normalisation typically allows us to transform the data with varying scales so that no specific dimension will dominate the statistics,
+      and it does not require making a very strong assumption about the distribution of the data, such as k-nearest neighbours and artificial neural networks.
+      However, Normalisation does not treat outliners very well. On the contrary, standardisation allows users to better handle the outliers and facilitate
+      convergence for some computational algorithms like gradient descent. Therefore, we usually prefer standardisation over Min-Max Normalisation.
 
+Q) What algorithm needs feature scaling?
+ANS) k means               = it uses euclidean distance
+     knn                   = measure the distance between the samples(kvalue).
+     PCA                   = variance concept is used (it obtaines the feature with maximum variance).
+     Gradient descent      = required
+     
+     
