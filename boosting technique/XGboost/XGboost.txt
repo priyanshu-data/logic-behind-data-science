@@ -1,5 +1,7 @@
 XGboost math
 
+It takes care of the outlier to some extend.
+
 It is a boosting algorithm.
 Boosting technique simply means ensemble learning or sequential(model train one after another) learning technique.
 XGboost is an extension of gradient boost.
@@ -63,6 +65,14 @@ ANS) similarity score is equal to
                                         so,how much the tree will grow depends on the gamma value.
                                         
                                         So, if the gamma value is high we are approaching the split more aggresively.less gamma value means less aggressiveness.
+                                        
+                                        
+                                        
+                                        If the lambda score is high similarity score will come down.which also means gain will come down,and the gain is low tree will be pruined 
+                                        (overfitted)
+                                        
+                                        
+                                      
                                         
                                         
                                         
