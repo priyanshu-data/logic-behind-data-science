@@ -1,1 +1,73 @@
-  
+XGboost math
+
+It is a boosting algorithm.
+Boosting technique simply means ensemble learning or sequential(model train one after another) learning technique.
+XGboost is an extension of gradient boost.
+
+Suppose i have a data set like this :
+                                      AGE                 IQ
+                                      10                  20
+                                      15                  34
+                                      16                  38
+                                     
+How it is effective let's see:
+
+step 1 : 
+         Create a base model.
+finding the average of iq will be 30(example) , base model will have errors obviously.(if we see in a plane we can view it properly)(e1,e2,e3 are errors)
+Now the next model will be fitted on these errors to minimize these errors.now the independent will be same and the dependent will be these errors.
+
+These steps are same as gradient boost then how it is different from gradient boost.
+
+In XGboost one must understand three things
+                                            1) Lambda (it is a regularizer)(it is used when we have overfitting problems)
+                                            2) Gamma (it defines the autopruning of the tree or controls the overfitting of the tree).
+                                            3) eta (how fast you want to converge to the next value.(it is not learning rate).
+
+now the model has residuals like (-10 , 4 , 8) creating a xgboost tree on the residuals(-10,4,8)
+
+Now there is a concept of similarity score of residuals on this node(-10,4,8)
+Q) But what is similarity score?
+ANS) similarity score is equal to 
+                                  =   (sum of residuals)^square
+                                      --------------------------
+                                      number of residuals + lambda(is regularizer parameter)
+                                      
+                                      if we plugin the values here we will have like  
+                                      =8+4-10 =     (2)^square                   =      4                  1.3 is the similarity score at that particular node.
+                                                 ----------------                     ------
+                                                   3+0                                  3
+                                      
+                                    now defining tree splitting criteria,
+                                    for example :                      Age>10
+                                    so how many records                  / \
+                                                                      -10   4,8
+                                      
+                                       Again the similarity score will be calculated for this score
+                                       like similarity score for -10 will be 100
+                                       score for 4,8 will be 144/2=72
+                                       NOW IMPORTANT TERM TO UNDERSTAND.
+                                       when the residuals are of same sign score is less.
+                                       as seen in the example we have scores like 100 and 72(this one has same sign so less score).
+                                       
+                                       NOW there is term called GAIN.
+                                                              GAIN = similarity score of the branch after split - similarity score before split
+                                                              
+                                                              = (100+72) - 1.3   = 170.7
+                                                              
+                                        Now the gamma parameter comes into picture.
+                                        gamma is nothing but, when you call xgboost algorithm you need to give gamma value
+                                        for example you choose gamma 130 
+                                        so, when the gamma value is less than the gain value , then only the split will happen , otherwise split will not happen.
+                                        here 170 is greater than 130 , so split will happen , and that is how auto pruning happens.
+                                        so,how much the tree will grow depends on the gamma value.
+                                        
+                                        So, if the gamma value is high we are approaching the split more aggresively.less gamma value means less aggressiveness.
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                      
+                                    
