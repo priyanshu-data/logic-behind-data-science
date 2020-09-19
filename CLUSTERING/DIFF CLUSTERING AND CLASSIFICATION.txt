@@ -1,0 +1,18 @@
+Q) What is Clustering?
+ANS) Clustering is a method of grouping objects in such a way that objects with similar features come together, and objects with dissimilar features go apart.
+     It is a common technique for statistical data analysis for machine learning and data mining. Exploratory data analysis and generalization is also an area that uses 
+     clustering.
+     Clustering belongs to unsupervised data mining.  It is not a single specific algorithm, but it is a general method to solve a task.
+     Therefore, it is possible to achieve clustering using various algorithms.
+ 
+Q) What is Classification?
+ANS) Classification is a categorization process that uses a training set of data to recognize, differentiate and understand objects. Classification is a supervised learning
+     technique where a training set and correctly defined observations are available.
+     
+Q) What is the Difference Between Clustering and Classification?
+ANS) Clustering is unsupervised learning while Classification is a supervised learning technique. It groups similar instances on the basis of features whereas 
+     classification assign predefined tags to instances on the basis of features. Clustering split the dataset into subsets to group the instances with similar features.
+     It does not use labelled data or a training set. On the other hand, categorize the new data according to the observations of the training set. The training set is labelled.
+
+     The goal of clustering is to group a set of objects to find whether there is any relationship between them, whereas classification aims to find which class a new object 
+     belongs to from the set of predefined classes.     
