@@ -1,0 +1,40 @@
+Q) What is PDF?(probability density function)
+ANS) It says how well is the dataset distribution using the histogram. The distribution is in the range of 0 to 100% or in the xyplane it is betweeen 0 to 1.
+     It comes into picture when the data is continuous.
+     
+                                           formula is : integration( - infinity to + infinity) of f(x)dx=1.
+                                           It means distribution is equal to 1.
+   EXAMPLE                                    
+Q) what is the probabilty that random variable is between 1 and 2?
+ANS) so we select area of 1 and 2 or we have to take area under the curve from 1 to 2, now for the equation i have instead of (-) infinity we have 1 and so as 2 for (+)
+     infinity.
+     
+     
+      Suppose let's take an example.
+      we have features like              height         weight         o/p
+                                           150            50            slim
+                                           160            60            slim
+                                           180            90            obese
+                                            "              "             "    
+    
+    The histogram plotting will be like this : it will give you the count of the number on the x axis.
+                                                 In the x axis one will have weight and the y axis will have count.
+                                                 
+                                                 To convert it into probability density function or smoothing the histogram.After smoothing it should look like bell curve.
+                                                 
+                                                 As soon as pdf is applied one sees y axis is changed to % of distribution of the weights.
+                                                 THIS IS CALLED PDF.
+                                                 
+                                                 
+ Q) What is CDF?(cumulative distribution function)
+ ANS) It is little bit different when compared to pdf.
+       Cumulative means increasing by one addition after the another,and including all the amounts that have been added before. 
+       
+       Let's take an example:
+       Taking the above example in xy plane.
+       Now for 50 datapoint i get 0.1 in y axis and now for 60 datapoint i have 0.25,and i want to find what is the cdf value it will be 0.35 and for each point i will be adding 
+       previous addup result.and the final result of cdf it take the shape of the curve and in the end it will be follow a straight line.(it look like a curve).
+       What does 0.1 , 0.25 indicates?
+       Now for 90 datapoint it has indicated 0.9 what does it indicate?
+       It means that 90% of the data distribution is less than 90kg.Which also indicates 10% of the data is greater than 90 kg.
+                                                 
