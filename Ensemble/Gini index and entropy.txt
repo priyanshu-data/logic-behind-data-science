@@ -18,7 +18,7 @@ Considering the example :
                           Here comes the play for gini index and entropy gain.
                           Formula for gini index = 1-summation of Probability c square   where, c=i  and j.(it simply means compute all the breakage happens inside the tree.
                           
-                          For example : root node is loan amount>=200                  so we have 2 record which is equal to greater than 200.
+                          For example : root node is loan amount>=250                  so we have 2 record which is equal to greater than 200.
                                         so it will have two condition like true and false
                                         one which satisfy the condition will be true and others will be in false condition
                                         
