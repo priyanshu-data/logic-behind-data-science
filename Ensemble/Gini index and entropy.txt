@@ -24,10 +24,11 @@ Considering the example :
                                         
                           TO CALCULATE THE IMPURITY OF THE NODE OR IMPURITY OF THE SPLIT.             
                           we have 2 bad to true side and two good and 1 bad to the false  (condition where all split is perfect is called best split).
-                          Now the gini for true side,
+                          Now the gini for true side,                                         for false side,
                                              1-((0/2)^2+(2/2)^2)                               1-((2/3)^2+(1/3)^2)
                                              which will be '0'                                  which will be 4/9
-                                             '0' means good class                                 '2' means good class and 1 means bad record  as in the data set.
+                                             '0/2' means good class                            '2/3' means good class and '1/3' means bad record  as in the data set.
+                                             '2/2' means bad class
                                              
                           Final gini index is weighted gini index : 
                                                                      2/5 which means outof 5 records 2 are in true side, '0' means gini index on true side.
