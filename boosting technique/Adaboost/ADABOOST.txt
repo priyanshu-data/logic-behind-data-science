@@ -112,3 +112,8 @@ NOW WE HAVE MANY DECISION TREES stumps.(many weak learners combine to make one s
 
 After this,voting goes,
 here also voting is done and weak learner becomes one big strong learner.
+
+
+
+DISADVANTAGE OD ADABOOST : 
+                           It is sensitive to noisy data or the outliers.
