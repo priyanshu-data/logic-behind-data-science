@@ -49,8 +49,8 @@ ANS) similarity score is equal to
                                        like similarity score for -10 will be 100
                                        score for 4,8 will be 144/2=72
                                        NOW IMPORTANT TERM TO UNDERSTAND.
-                                       when the residuals are of same sign score is less.
-                                       as seen in the example we have scores like 100 and 72(this one has same sign so less score).
+                                       when the residuals are of same sign score is high.
+                                       as seen in the example we have scores like 100 and 72(this one has same sign so high score).
                                        
                                        NOW there is term called GAIN.
                                                               GAIN = similarity score of the branch after split - similarity score before split
